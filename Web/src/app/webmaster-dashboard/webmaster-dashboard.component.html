@@ -1,0 +1,60 @@
+
+<header style="align-items: center;">
+  <a  style="color: rgb(160, 255, 105); padding : 20px " href="/user-login">Logout</a> 
+</header><h1 style="text-align: center">User Creation</h1>
+<div class="login">
+  <h2 class="login-header">Create user</h2>
+  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+    <!--         
+  &lt;p [ngClass]="{{ '{' }} 'has-error': isSubmitted &amp;&amp; formControls.email.errors {{'}'}}"&gt;
+    &lt;input type="email" placeholder="Email" formControlName="email"&gt;
+  &lt;/p&gt;
+  
+  &lt;div *ngIf="isSubmitted &amp;&amp; formControls.email.errors" class="help-block"&gt;
+    &lt;div *ngIf="formControls.email.errors.required"&gt;Email is required&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;p [ngClass]="{{ '{' }} 'has-error': isSubmitted &amp;&amp; formControls.password.errors{{'}'}}"&gt;
+    &lt;input type="password" placeholder="Password" formControlName="password"&gt;
+  &lt;/p&gt;
+  
+  &lt;div *ngIf="isSubmitted &amp;&amp; formControls.password.errors" class="help-block"&gt;
+    &lt;div *ngIf="formControls.password.errors.required"&gt;Password is required&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;p&gt;
+    &lt;input type="submit" value="Log in"&gt;
+  &lt;/p&gt; -->
+    <label for="username">Username:</label><br />
+    <input
+      type="text"
+      id="username"
+      name="username"
+      formControlName="username"
+    /><br />
+    <label for="pwd">Password:</label><br />
+    <input
+      type="password"
+      id="pwd"
+      name="pwd"
+      formControlName="pwd"
+    /><br />
+    <label for="conpassword">Confirm Password:</label><br />
+    <input
+      type="password"
+      id="conpassword"
+      name="conpassword"
+      formControlName="conpassword"
+    /><br />
+    <label for="email">Email:</label><br />
+    <input type="text" id="email" name="email" formControlName="email" />
+    <div>
+   
+    <label for="isDOA">Department of Agriculture</label><br />
+    <input type="radio" id="isDOA" name="type" value="isDOA" formControlName="type"/>
+    </div>
+    <input type="radio" id="isKeells" name="type" value="isKeells"formControlName="type" />
+    <label for="isKeells">Keells</label><br />
+    <input type="submit" value="Submit" />
+  </form>
+</div>

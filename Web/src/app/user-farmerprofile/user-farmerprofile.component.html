@@ -1,0 +1,38 @@
+<header style="align-items: center;">
+  <a  style="color: rgb(160, 255, 105); padding : 20px " href="/user-login">Logout</a> 
+</header>
+<h1 style="text-align: center">Farmer Profile</h1>
+<div class="login">
+  <h2 class="login-header">Details</h2>
+  <div class="login-container">
+    <label for="username">Quality:</label><br />
+    <select [(ngModel)]="selectedLevel">
+        <option *ngFor="let type of qualityFlagType" value={{type.icon}}>
+            {{type.name}}
+        </option>
+    </select>
+    <button (click)="clickFunction()" class="btn btn-success">Submit</button>
+
+<!-- 
+    <button
+      (click)="gclick"
+      value="Save"
+      style="padding-right: 50px; padding-left: 50px"
+    >Save</button> -->
+    <br /><br />
+
+    <table id="users">
+      <tr>
+        <th *ngFor="let column of headers">
+          {{ column }}
+        </th>
+      </tr>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let column of headers">
+          {{ row[column] }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+</div>

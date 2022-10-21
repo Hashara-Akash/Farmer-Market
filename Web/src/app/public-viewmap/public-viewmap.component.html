@@ -1,0 +1,45 @@
+
+<!-- <agm-map [latitude]="latitude" [longitude]="longitude" 
+      (mapClick)="location($event)"> 
+  <agm-marker [latitude]="latitude" [longitude]="longitude"> 
+</agm-marker> 
+</agm-map>  -->
+<header style="align-items: center;">
+  
+  <a  style="color: rgb(160, 255, 105); padding : 20px " href="/farmer-login">Farmer Login</a>
+  <a  style="color: rgb(160, 255, 105); padding : 20px "href="/user-login">User Login</a> 
+  <a  style="color: rgb(160, 255, 105); padding : 20px "href="/report-farmerproduct">Report</a> 
+  <a  style="color: rgb(160, 255, 105); padding : 20px " href="/webmaster-login">WebMaster?</a> 
+
+
+</header>
+
+<agm-map 
+
+[latitude]='lat' 
+
+[longitude]='long'
+
+[zoom]='zoom'
+
+>
+
+ 
+
+ <agm-marker 
+
+     *ngFor="let marker of markers" 
+
+     [latitude]="marker.lat" 
+   
+       [longitude]="marker.lng">    
+
+           <agm-info-window #infoWindow>
+               {{ marker.label }}
+         </agm-info-window>
+
+ </agm-marker>
+
+ 
+
+</agm-map>

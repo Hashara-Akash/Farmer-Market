@@ -1,0 +1,38 @@
+
+
+<!-- <agm-map [latitude]="latitude" [longitude]="longitude" 
+      (mapClick)="location($event)"> 
+  <agm-marker [latitude]="latitude" [longitude]="longitude"> 
+</agm-marker> 
+</agm-map>  -->
+
+<agm-map 
+
+[latitude]='lat' 
+
+[longitude]='long'
+
+[zoom]='zoom'
+
+>
+
+ 
+
+ <agm-marker 
+
+     *ngFor="let marker of markers" 
+
+     [latitude]="marker.lat" 
+     [iconUrl]="marker.icon"
+       [longitude]="marker.lng">    
+
+           <agm-info-window #infoWindow>
+            <strong> {{ marker.label }}</strong><br/>
+            <a href='/user-farmerprofile?id={{marker.id}}'>More info</a>
+         </agm-info-window>
+
+ </agm-marker>
+
+ 
+
+</agm-map>

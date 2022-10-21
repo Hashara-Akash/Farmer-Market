@@ -1,0 +1,83 @@
+<header style="align-items: center;">
+  <a  style="color: rgb(160, 255, 105); padding : 20px " href="/farmer-login">Logout</a> 
+</header>
+<h1 style="text-align: center">Products</h1>
+<div class="login">
+  <h2 class="login-header">Add Product</h2>
+  <div class="login-container">
+    <label for="productName" >Name:</label><br />
+    <input type="text" id="name" name="name" style="width: 25%" [(ngModel)]="productName" /><br />
+    <label for="price">Price:</label><br />
+    <input
+    [(ngModel)]="price"
+      type="number"
+      id="price"
+      name="price"
+      style="width: 25%"
+      min="0"
+      value="0"
+      step=".01"
+    /><br />
+    <label for="quantity">Quantity:</label><br />
+    <input
+      type="number"
+      id="quantity"
+      [(ngModel)]="quantity"
+      name="quantity"
+      style="width: 25%"
+      min="0"
+      value="0"
+      step=".01"
+    /><br />
+    <button (click)="clickFunction()" class="btn btn-success">Add</button>
+
+    <br /><br />
+
+    <table id="users">
+      <tr>
+        <th *ngFor="let column of headers">
+          {{ column }}
+        </th>
+      </tr>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let column of headers">
+          {{ row[column] }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!-- <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+  
+    <label for="username">Username:</label><br />
+    <input
+      type="text"
+      id="username"
+      name="username"
+      formControlName="username"
+    /><br />
+    <label for="password">Password:</label><br />
+    <input
+      type="password"
+      id="password"
+      name="password"
+      formControlName="password"
+    /><br />
+    <label for="conpassword">Confirm Password:</label><br />
+    <input
+      type="password"
+      id="conpassword"
+      name="conpassword"
+      formControlName="conpassword"
+    /><br />
+    <label for="email">Email:</label><br />
+    <input type="text" id="email" name="email" formControlName="email" />
+    <div>
+   
+    <label for="isDOA">Department of Agriculture</label><br />
+    <input type="radio" id="isDOA" name="type" value="isDOA" formControlName="type"/>
+    </div>
+    <input type="radio" id="isKeells" name="type" value="isKeells"formControlName="type" />
+    <label for="isKeells">Keells</label><br />
+    <input type="submit" value="Submit" />
+  </form> -->
+</div>
